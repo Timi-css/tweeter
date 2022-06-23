@@ -1,0 +1,35 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  flex-direction: column;
+  background-color: #d89824;
+  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+}
+
+h2 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  color: #fff;
+}

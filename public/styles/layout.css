@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -18,8 +20,54 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+/* MAIN/HEADER STYLING*/
+#container {
+  background-color: #f4f1ec;
+  margin: 32px;
+  width: 90%;
+}
+
+/* NAV STYILING */
+nav {
+  height: 120px;
+  background-color: #4056a1;
+  color: #ffff;
+  padding: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+p {
+  font-size: 18px;
+}
+
+.new-tweet-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Bungee", cursive;
+  font-size: 2em;
+}
+
+.new-tweet {
+  display: flex;
+  font-family: "Source Sans Pro", sans-serif;
+  justify-content: flex-end;
+}
+
+.fa-solid {
+  display: flex;
+  justify-self: end;
+  color: red;
+}
