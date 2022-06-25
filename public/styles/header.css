@@ -34,3 +34,15 @@ h2 {
   font-weight: 600;
   color: #fff;
 }
+
+@media (min-width: 1024px) {
+  .main-header {
+    width: 60%;
+    height: 60%;
+    margin: 200px 40px 40px 40px;
+  }
+
+  .header-img {
+    padding-top: 20px;
+  }
+}

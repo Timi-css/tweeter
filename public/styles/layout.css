@@ -70,8 +70,26 @@ p {
   justify-content: flex-end;
 }
 
-.fa-solid {
+.fa-angles-down {
   display: flex;
   justify-self: end;
   color: red;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  main {
+    margin: auto 2vw auto 2vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  nav {
+    background-color: #d89824;
+    background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+  }
 }

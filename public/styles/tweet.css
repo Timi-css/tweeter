@@ -1,8 +1,16 @@
+.tweet {
+  border: 3px solid #555149;
+  margin-bottom: 2em;
+  padding: 1rem;
+}
+
+.tweet:hover {
+  box-shadow: 5px 10px #5549497e;
+}
+
 .tweet-section {
   display: flex;
-  border: 3px solid #555149;
   flex-direction: column;
-  padding: 1rem;
 }
 
 .tweet-header {
@@ -63,11 +71,32 @@ footer {
   text-decoration: none;
 }
 
-.fa-solid1 {
+.fa-flag,
+.fa-retweet,
+.fa-heart {
   font-size: 18px;
   color: #4056a1;
 }
 
-.fa-solid1:hover {
+.fa-flag:hover {
   color: orange;
+}
+
+.fa-retweet:hover {
+  color: orange;
+}
+
+.fa-heart:hover {
+  color: orange;
+}
+
+#tweet-content {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+  border-bottom: 5px solid #555149;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  font-size: 24px;
 }

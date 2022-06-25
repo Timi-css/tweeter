@@ -8,6 +8,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 
 form {
@@ -25,10 +26,6 @@ form {
   background-color: #4056a1;
 }
 
-label {
-  display: block;
-}
-
 #tweet-text {
   border: none;
   background-color: transparent;
@@ -44,4 +41,12 @@ label {
   justify-content: flex-start;
   color: #555149;
   font-weight: 600;
+  margin-bottom: 30px;
+}
+
+@media (min-width:1024px) {
+  #container {
+    margin-top: 150px;
+
+  }
 }

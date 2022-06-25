@@ -40,9 +40,17 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/error-message.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -66,7 +74,7 @@
 
     <header class="main-header">
       <div class="main-container">
-        <img src="/images/profile-hex.png" />
+        <img class="header-img" src="/images/profile-hex.png" />
       </div>
       <br />
       <div>
@@ -77,6 +85,14 @@
     <!-- Page-specific (main) content here -->
     <main id="container">
       <section class="new-tweet">
+        <div class="error-message-container">
+          Error! Tweet exceeds field limit
+          <span
+            class="closebtn"
+            onclick="this.parentElement.style.display='none';"
+            >&times;</span
+          >
+        </div>
         <form>
           <label for="tweet-text" class="tweet-text"
             >What are you humming about?</label
@@ -95,7 +111,7 @@
         </form>
       </section>
       <section class="tweet-section">
-        <article class="tweet">
+        <!-- <article class="tweet">
           <header class="tweet-header">
             <div class="user-info-container">
               <img class="user-icon" src="/images/profile-hex.png" />
@@ -118,13 +134,13 @@
 
             <div class="icons-container">
               <a class="icons-link" href="/tweeter/public/index.html">
-                <i class="fa-solid1 fa-flag"></i> &nbsp;
-                <i class="fa-solid1 fa-retweet"></i> &nbsp;
-                <i class="fa-solid1 fa-heart"></i>
+                <i class="fa-solid fa-flag"></i> &nbsp;
+                <i class="fa-solid fa-retweet"></i> &nbsp;
+                <i class="fa-solid fa-heart"></i>
               </a>
             </div>
           </footer>
-        </article>
+        </article> -->
       </section>
     </main>
   </body>

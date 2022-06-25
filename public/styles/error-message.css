@@ -1,0 +1,15 @@
+.error-message-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 10px solid red;
+  padding: 10px 10px 10px 40px;
+  margin-bottom: 30px;
+  width: 65%;
+  background-color: #fff;
+}
+
+.closebtn {
+  color: red;
+  cursor: pointer;
+}
