@@ -20,6 +20,6 @@ This repository is the starter code for the project: Students will fork and clon
 ## Images
 
 - Image of the Tweeter home page at 1024px for desktops
-  !["Screenshot of URLs page"](https://github.com/Timi-css/tinyapp/blob/master/docs/Urls.png)
-  !["Screenshot of register page"](https://github.com/Timi-css/tinyapp/blob/master/docs/Registration.png)
-  !["Screenshot of login page"](https://github.com/Timi-css/tinyapp/blob/master/docs/Login.png)
+  !["Image of the Tweeter home page for desktops"](https://github.com/Timi-css/tweeter/blob/master/docs/tweet-box-tablet.png)
+
+  !["Image of the Tweeter home page for tablets"](https://github.com/Timi-css/tweeter/blob/master/docs/tweet-box.png)
