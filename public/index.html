@@ -86,13 +86,15 @@
     <main id="container">
       <section class="new-tweet">
         <div class="error-message-container">
-          Error! Tweet exceeds field limit
+          <p class="warning-msg"></p>
+          <!-- Error! Tweet exceeds field limit
           <span
             class="closebtn"
             onclick="this.parentElement.style.display='none';"
             >&times;</span
-          >
+          > -->
         </div>
+
         <form>
           <label for="tweet-text" class="tweet-text"
             >What are you humming about?</label
@@ -110,7 +112,7 @@
           </div>
         </form>
       </section>
-      <section class="tweet-section">
+      <section id="tweet-section">
         <!-- <article class="tweet">
           <header class="tweet-header">
             <div class="user-info-container">

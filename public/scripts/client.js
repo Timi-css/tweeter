@@ -11,22 +11,21 @@ $(document).ready(function () {
     const tweetLength = $("#tweet-text").val().length;
     const tweetVal = $("#tweet-text").val();
     if (tweetLength > 140) {
-      alert("Error! Tweet exceeds field limit");
-
-      return;
-    }
-
-    if (tweetVal === "") {
-      alert("Error! Empty tweet!");
-      return;
+      $(".warning-msg").text("Error! Tweet exceeds character limit");
+      return $(".error-message-container").slideDown();
+    } else if (tweetLength === 0) {
+      $(".warning-msg").text("Error! Tweet is empty! Please enter tweet");
+      return $(".error-message-container").slideDown();
+    } else if (tweetLength <= 140) {
+      $(".error-message-container").slideUp();
     }
 
     console.log($(this).serialize());
     const newData = $(this).serialize();
 
-    $.post("/tweets", newData, function () {
-      console.log("Success!");
-    });
+    // $.post("/tweets", newData, function () {
+    //   console.log("Success!");
+    // });
   });
 
   const tweetData = {
@@ -68,15 +67,17 @@ $(document).ready(function () {
 
   const renderTweets = function (tweets) {
     // refresh the container
-    $(".tweet-section").empty();
+    $("#tweet-section").empty();
     // loops through tweets
-    tweets.forEach((tweet) => {
+    console.log(tweets);
+    for (let tweet of tweets) {
       // calls createTweetElement for each tweet
+
       const tweetElement = createTweetElement(tweet);
 
       // takes return value and appends it to the tweets container
-      $(".tweet-section").append(tweetElement);
-    });
+      $("#tweet-section").prepend(tweetElement);
+    }
   };
 
   const createTweetElement = function (tweet) {
@@ -114,8 +115,6 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  renderTweets(data);
-
   const loadTweets = function () {
     // $get("/tweets")
     // .then(data => {
@@ -124,9 +123,7 @@ $(document).ready(function () {
 
     // })
 
-
-
-    $.ajax("/tweets/", { method: "GET" }).done(function (data) {
+    $.ajax("/tweets/", { method: "GET" }).then(function (data) {
       renderTweets(data);
       console.log("Success!");
     });
@@ -142,9 +139,14 @@ $(document).ready(function () {
       event.preventDefault();
       const queryString = $(this).serialize();
       console.log(queryString); //TEST CODE FOR DEBUGGING
-      $.ajax("/tweets/", { method: "POST", data: queryString })
-        // reload the tweets after a new one is posted
-        .done(() => loadTweets());
+      $.ajax("/tweets/", { method: "POST", data: queryString }).then(
+        function () {
+          // $("#tweet-section").empty();
+          $("#tweet-text").val("");
+          $("#counter").text(140);
+          loadTweets();
+        }
+      );
     });
   });
 });

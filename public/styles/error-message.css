@@ -1,5 +1,5 @@
 .error-message-container {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   border-left: 10px solid red;

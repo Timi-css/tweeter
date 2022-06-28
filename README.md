@@ -15,11 +15,17 @@ This repository is the starter code for the project: Students will fork and clon
 ## Dependencies
 
 - Express
+- Body Parser
+- Chance
+- Command
+- md5
+- Nodemon
 - Node 5.10.x or above
 
 ## Images
 
-- Image of the Tweeter home page at 1024px for desktops
-  !["Image of the Tweeter home page for desktops"](https://github.com/Timi-css/tweeter/blob/master/docs/tweet-box-tablet.png)
+- Image of the Tweeter home page at min-width of 768px and max-width of 1023px for tablets
+  !["Image of the Tweeter home page for tablets"](https://github.com/Timi-css/tweeter/blob/master/docs/tweet-box-tablet.png)
 
-  !["Image of the Tweeter home page for tablets"](https://github.com/Timi-css/tweeter/blob/master/docs/tweet-box.png)
+- Image of the Tweeter home page at 1024px for desktops
+  !["Image of the Tweeter home page for desktops"](https://github.com/Timi-css/tweeter/blob/master/docs/tweet-box.png)
