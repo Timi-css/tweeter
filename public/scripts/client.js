@@ -4,8 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
-  console.log($(`form`).length);
-
   const tweetData = {
     user: {
       name: "Newton",
@@ -47,7 +45,6 @@ $(document).ready(function () {
     // refresh the container
     $("#tweet-section").empty();
     // loops through tweets
-    console.log(tweets);
     for (let tweet of tweets) {
       // calls createTweetElement for each tweet
 
@@ -94,16 +91,8 @@ $(document).ready(function () {
   };
 
   const loadTweets = function () {
-    // $get("/tweets")
-    // .then(data => {
-    //   $('textarea').val('')
-    //   renderTweets(data)
-
-    // })
-
     $.ajax("/tweets/", { method: "GET" }).then(function (data) {
       renderTweets(data);
-      console.log("Success!");
     });
   };
 
@@ -113,12 +102,12 @@ $(document).ready(function () {
     // send new tweets to server
     const $form = $(".new-tweet form");
     $form.on("submit", function (event) {
-      console.log("form submitted, performing ajax call..."); //TEST CODE FOR DEBUGGING
+      //TEST CODE FOR DEBUGGING
       event.preventDefault();
       const queryString = $(this).serialize();
       const tweetLength = $("#tweet-text").val().length;
       const tweetVal = $("#tweet-text").val();
-      console.log(queryString); //TEST CODE FOR DEBUGGING
+      //TEST CODE FOR DEBUGGING
       if (tweetLength > 140) {
         $(".warning-msg").text("Error! Tweet exceeds character limit");
         $(".error-message-container").slideDown();
@@ -132,7 +121,6 @@ $(document).ready(function () {
       }
       $.ajax("/tweets/", { method: "POST", data: queryString }).then(
         function () {
-          // $("#tweet-section").empty();
           $("#tweet-text").val("");
           $("#counter").text(140);
           $(".error-message-container").slideUp();
