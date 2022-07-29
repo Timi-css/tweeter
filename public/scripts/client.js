@@ -6,28 +6,6 @@
 $(document).ready(function () {
   console.log($(`form`).length);
 
-  $(`form`).submit(function (event) {
-    event.preventDefault();
-    const tweetLength = $("#tweet-text").val().length;
-    const tweetVal = $("#tweet-text").val();
-    if (tweetLength > 140) {
-      $(".warning-msg").text("Error! Tweet exceeds character limit");
-      return $(".error-message-container").slideDown();
-    } else if (tweetLength === 0) {
-      $(".warning-msg").text("Error! Tweet is empty! Please enter tweet");
-      return $(".error-message-container").slideDown();
-    } else if (tweetLength <= 140) {
-      $(".error-message-container").slideUp();
-    }
-
-    console.log($(this).serialize());
-    const newData = $(this).serialize();
-
-    // $.post("/tweets", newData, function () {
-    //   console.log("Success!");
-    // });
-  });
-
   const tweetData = {
     user: {
       name: "Newton",
@@ -138,12 +116,26 @@ $(document).ready(function () {
       console.log("form submitted, performing ajax call..."); //TEST CODE FOR DEBUGGING
       event.preventDefault();
       const queryString = $(this).serialize();
+      const tweetLength = $("#tweet-text").val().length;
+      const tweetVal = $("#tweet-text").val();
       console.log(queryString); //TEST CODE FOR DEBUGGING
+      if (tweetLength > 140) {
+        $(".warning-msg").text("Error! Tweet exceeds character limit");
+        $(".error-message-container").slideDown();
+        return false;
+      } else if (tweetLength === 0) {
+        $(".warning-msg").text("Error! Tweet is empty! Please enter tweet");
+        $(".error-message-container").slideDown();
+        return false;
+      } else if (tweetLength <= 140) {
+        $(".error-message-container").slideUp();
+      }
       $.ajax("/tweets/", { method: "POST", data: queryString }).then(
         function () {
           // $("#tweet-section").empty();
           $("#tweet-text").val("");
           $("#counter").text(140);
+          $(".error-message-container").slideUp();
           loadTweets();
         }
       );
